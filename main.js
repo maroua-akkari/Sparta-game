@@ -18,6 +18,17 @@ console.log("DOM is ready");
   request.send();
 
 
+var timer = setInterval(function(){
+  var time = document.getElementById('secs').innerHTML;
+  if(time > 0) {
+    time--;
+  } else {
+    console.log("Ran out of time!");
+    alert("Time's up!");
+    clearInterval(timer);
+  }
+  document.getElementById("secs").innerHTML = time;
+}, 1000);
 
 
 
