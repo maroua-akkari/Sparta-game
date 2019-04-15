@@ -7,11 +7,16 @@ h1, h2 {
 }
 
 h1 {
-  padding-top: 100px;
+  padding-top: 5px;
 }
 
 body {
   background: url("quiz-background.png");
+}
+
+.allContent {
+    border: 1px solid black;
+    margin-top: 50px;
 }
 
 .categories li {
@@ -24,5 +29,9 @@ body {
 }
 
 .secs , .mins {
+  text-align: center;
+}
+
+.score {
   text-align: center;
 }
