@@ -11,10 +11,10 @@
 
   </head>
   <body>
-    <div class="container">
+    <div class="container allContent">
 
       <h1>Best Quiz Game Ever</h1>
-      <div class="col-lg-3 col-md-3 categories">
+      <div class="col-lg-3 col-md-3 col-sm-3 categories">
         <h2>Categories:</h2>
         <ul>
           <li>General Knowledge</li>
@@ -23,34 +23,35 @@
         </ul>
     </div>
 
-      <div class="col-lg-6 col-md-6 question answer">
+      <div class="col-lg-6 col-md-6 col-sm-6 question answer">
         <h2>Question:</h2>
         <p class="q">Random question</p>
         <h2>Pick your answer:</h2>
         <div class="btn-group btn-group-justified" role="group" aria-label="...">
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default a1">1</button>
+            <button type="button" class="btn btn-default" id="a1">1</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default a2">2</button>
+            <button type="button" class="btn btn-default" id="a2">2</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default a3">3</button>
+            <button type="button" class="btn btn-default" id="a3">3</button>
           </div>
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-default a4">4</button>
+            <button type="button" class="btn btn-default" id="a4">4</button>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-3 score timer">
+      <div class="col-lg-3 col-md-3 col-sm-3 score timer">
         <h2>Timer:</h2>
-        <div class="mins" id="mins">0</div>
-        <p class="mins">MINS</p>
+        <!-- <div class="mins" id="mins">0</div>
+        <p class="mins">MINS</p> -->
         <div class="secs" id="secs">5</div>
         <p class="secs">SECS</p>
 
         <h2>Score</h2>
+        <div class="score" id="userScore">0</div>
       </div>
 
       <!-- <div class="difficulty">
