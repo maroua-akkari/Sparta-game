@@ -1,0 +1,3 @@
+.difficulty , .categories , .question , .answer , .timer , .score {
+  border: 1px solid black;
+}
