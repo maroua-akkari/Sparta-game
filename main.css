@@ -2,7 +2,7 @@
   border: 1px solid black;
 } */
 
-h1, h2 {
+h1, h2, h4 {
   text-align: center;
 }
 
@@ -16,7 +16,7 @@ body {
 
 .allContent {
     border: 1px solid black;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 .categories li {
@@ -34,4 +34,19 @@ body {
 
 .score {
   text-align: center;
+}
+
+.myModal {
+  margin-top: 200px;
+}
+
+.playAgain {
+  color: white;
+  text-decoration: none;
+}
+
+.panel {
+margin: 40px;
+padding: 50px;
+text-align: center;
 }
