@@ -80,6 +80,7 @@ console.log("DOM is ready");
     if (time <= 0) {
       $(".secs").html("Time's up!").css("color", "red");
       $('#myModal').modal('show');
+      $("#finalScore").html("Your final score is " + score + " /10");
     }
     document.getElementById("secs").innerHTML = time;
   }, 1000);
