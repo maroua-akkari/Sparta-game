@@ -2,30 +2,30 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Best Quiz Game Ever</title>
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <!-- <script type="text/javascript" src="bootstrap.min.js"></script> -->
-    <script src="https://code.jquery.com/jquery-3.4.0.min.js" integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <title>Maroua's Quiz</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js"></script>
 
   </head>
   <body>
     <div class="container allContent">
-
       <h1>Best Quiz Game Ever</h1>
-      <div class="col-lg-3 col-md-3 col-sm-3 categories">
-        <h2>Categories:</h2>
-        <ul>
-          <li>General Knowledge</li>
-          <li>Movies</li>
-          <li>Famous People</li>
-        </ul>
-    </div>
+      <div class="panel panel-default">
+        <div class="panel-body">
 
-      <div class="col-lg-6 col-md-6 col-sm-6 question answer">
+      <div class="col-lg-2 col-md-2 col-sm-2 score timer">
+        <h2>Timer:</h2>
+        <div class="secs" id="secs">10</div>
+        <p class="secs">SECONDS</p>
+      </div>
+
+
+      <div class="col-lg-8 col-md-8 col-sm-8 question answer">
         <h2>Question:</h2>
-        <p class="q"></p>
+        <p class="q" id="q"></p>
         <h2>Pick your answer:</h2>
         <div class="btn-group btn-group-justified" id="multipleChoice" role="group" aria-label="...">
           <div class="btn-group" role="group">
@@ -44,26 +44,35 @@
       </div>
 
 
-      <div class="col-lg-3 col-md-3 col-sm-3 score timer">
-        <h2>Timer:</h2>
-        <div class="secs" id="secs">5</div>
-        <p class="secs">SECONDS</p>
-
+      <div class="col-lg-2 col-md-2 col-sm-2 score timer">
         <h2>Score</h2>
         <div class="score" id="userScore">0</div>
       </div>
 
-      <!-- <div class="difficulty">
-        <h2>Difficulty level:</h2>
-        <ul>
-          <li>Easy</li>
-          <li>Medium</li>
-          <li>Hard</li>
-        </ul>
-      </div> -->
+      <div class="modal fade myModal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title">Game Over</h4>
+            </div>
+            <div class="modal-body">
+              <p>Well done!</p>
+              <p>Your final score is</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary playAgain" id="playAgain" onclick="location.href = 'home.html'">Play again</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
 
 
+
+        </div>
+      </div>
     </div>
   </body>
 </html>
