@@ -6,50 +6,52 @@ console.log("DOM is ready");
   function questions() {
   var request = new XMLHttpRequest();
   request.open("GET", "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple");
-  var question = [];
+  // var question = [];
   var answers = [];
   request.addEventListener("load", function() {
     var data = JSON.parse(this.responseText);
-    question.push(data.results[0].question);
+
+    console.log(data);
+      $(".q").html(data.results[0].question);
     answers.push(data.results[0].incorrect_answers[0]);
     answers.push(data.results[0].incorrect_answers[1]);
     answers.push(data.results[0].incorrect_answers[2]);
     answers.push(data.results[0].correct_answer);
-    $(".q").html(question);
 
-    for (var i = 0; i < answers.length; i++) {
-      console.log(answers[i]);
-    }
+    // for (var i = 0; i < answers.length; i++) {
+      // var randomAns1 = answers[Math.floor(Math.random()*answers.length)];
+      // var randomAns2 = answers[Math.floor(Math.random()*answers.length)];
+      // var randomAns3 = answers[Math.floor(Math.random()*answers.length)];
+      // var randomAns4 = answers[Math.floor(Math.random()*answers.length)];
+      randomAns = answers.sort(function(a,b) {
+        return 0.5 - Math.random();
+      })
+      console.log(randomAns);
+
+      for (var i = 0; i < randomAns.length; i++) {
+        $("#a"+ i).html(randomAns[i]);
+      }
 
 
-
-
-    $("#multipleChoice").html(answers);
-    // $("button").html(answers);
-    // $("#a1").html(data.results[0].incorrect_answers[0]);
-    // $("#a2").html(data.results[0].correct_answer);
-    // $("#a3").html(data.results[0].incorrect_answers[2]);
-    // $("#a4").html(data.results[0].incorrect_answers[1]);
   })
   request.send();
-  console.log(question);
   console.log(answers);
 }
 questions()
 
 
 // when correct answer is clicked:
-  var answerButton = document.getElementById("a2");
-  answerButton.addEventListener("click", buttonClick);
-  var score = 0;
-  function buttonClick() {
-      console.log("Correct answer!");
-      score++;
-        console.log(score)
-        document.getElementById("userScore").innerHTML = score + " / 10";
-      console.log(score + "/10");
-          questions();
-    }
+  // var answerButton = document.getElementById("a2");
+  // answerButton.addEventListener("click", buttonClick);
+  // var score = 0;
+  // function buttonClick() {
+  //     console.log("Correct answer!");
+  //     score++;
+  //       console.log(score)
+  //       document.getElementById("userScore").innerHTML = score + " / 10";
+  //     console.log(score + "/10");
+  //         questions();
+  //   }
 
 
 
@@ -64,10 +66,11 @@ var timer = setInterval(function(){
   }
   if (time == 0) {
     var timeUp = document.getElementById('secs');
-    timeUp.style.color = "red";
-    // timeUp.innerHTML = "Time's up!";
   }
   document.getElementById("secs").innerHTML = time;
+  timeUp.style.color = "red";
+  // timeUp.innerHTML = "Time's up!";
+
 }, 1000);
 
 
