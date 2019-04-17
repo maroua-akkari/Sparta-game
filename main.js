@@ -2,33 +2,39 @@ $(function(event) {
 console.log("DOM is ready");
 
 
-  function quiz() {
+  function getQuestions() {
     var request = new XMLHttpRequest();
-    request.open("GET", "https://opentdb.com/api.php?amount=12&category=22&difficulty=medium&type=multiple");
+    request.open("GET", "https://opentdb.com/api.php?amount=20&category=22&difficulty=medium&type=multiple");
     request.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
-      console.log(data);
-      question(data);
-      ansChoices(data);
+      fillInQAndA(data);
     });
     request.send();
   }
-  quiz();
+  getQuestions();
+
+  function fillInQAndA(data) {
+    questions = data;
+    question(data);
+    ansChoices(data);
+  }
 
   var answers = [];
   var correctAns = [];
   var score = [];
+  var questionNumber = 0;
+  var questions;
 
 
   function question(data) {
-    $("#q").html(data.results[0].question);
+    $("#q").html(data.results[questionNumber].question);
   }
 
   function ansChoices(data) {
-    correctAns.push(data.results[0].correct_answer+" A");
-    answers.push(data.results[0].incorrect_answers[0]);
-    answers.push(data.results[0].incorrect_answers[1]);
-    answers.push(data.results[0].incorrect_answers[2]);
+    correctAns.push(data.results[questionNumber].correct_answer + " A");
+    answers.push(data.results[questionNumber].incorrect_answers[0]);
+    answers.push(data.results[questionNumber].incorrect_answers[1]);
+    answers.push(data.results[questionNumber].incorrect_answers[2]);
     answers.push(correctAns[0]);
 
     randomAns = answers.sort(function(a,b) {
@@ -43,33 +49,28 @@ console.log("DOM is ready");
 
     $(".choice").on("click", function(){
       if (this.innerHTML == correctAns[0]) {
-        console.log("Correct answer!!");
-
+        var audio = $("#correctSound")[0];
+        audio.play();
+        // console.log("Correct answer!!");
         score++;
-        document.getElementById("userScore").innerHTML = score + " / 10";
-
-        console.log(answers);
-        console.log(correctAns);
-
+        document.getElementById("userScore").innerHTML ="Correct answers: " + score;
         answers = [];
         correctAns = [];
-        console.log(answers);
-        console.log(correctAns);
-        quiz();
-
-
+        questionNumber++;
+        fillInQAndA(questions);
       } else {
-      console.log("Wrong answer");
+      // console.log("Wrong answer");
+      var audio = $("#incorrectSound")[0];
+      audio.play();
       answers = [];
       correctAns = [];
-      quiz();
+      questionNumber++;
+      fillInQAndA(questions);
     }
 
   });
 
 
-
-// counts down to zero
   var timer = setInterval(function(){
     var time = document.getElementById('secs').innerHTML;
     if(time > 0) {
@@ -80,7 +81,7 @@ console.log("DOM is ready");
     if (time <= 0) {
       $(".secs").html("Time's up!").css("color", "red");
       $('#myModal').modal('show');
-      $("#finalScore").html("Your final score is " + score + " /10");
+      $("#finalScore").html("You answered " + score + " questions correctly");
     }
     document.getElementById("secs").innerHTML = time;
   }, 1000);
