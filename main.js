@@ -1,6 +1,8 @@
 $(function(event) {
 console.log("DOM is ready");
 
+$('#startingModal').modal('show');
+
 
   function getQuestions() {
     var request = new XMLHttpRequest();
@@ -70,7 +72,7 @@ console.log("DOM is ready");
 
   });
 
-
+  $("#start").on("click", function(){
   var timer = setInterval(function(){
     var time = document.getElementById('secs').innerHTML;
     if(time > 0) {
@@ -85,7 +87,7 @@ console.log("DOM is ready");
     }
     document.getElementById("secs").innerHTML = time;
   }, 1000);
-
+  })
 
 
 
