@@ -15,17 +15,19 @@
       <div class="panel panel-default">
         <div class="panel-body">
 
-      <div class="col-lg-2 col-md-2 col-sm-2 score timer">
-        <h2>Timer:</h2>
-        <div class="secs" id="secs">10</div>
-        <p class="secs">SECONDS</p>
+      <div class="col-lg-2 col-md-2 col-sm-2 score categories">
+        <h3>Categories:</h3>
+        <p>General knowledge</p>
+        <p>Music</p>
+        <p>Sports</p>
       </div>
 
 
       <div class="col-lg-8 col-md-8 col-sm-8 question answer">
-        <h2>Question:</h2>
+        <h3>Question:</h3>
+        <!-- <h2 class="q" id="q"></h2> -->
         <p class="q" id="q"></p>
-        <h2>Pick your answer:</h2>
+        <h3>Pick your answer:</h3>
         <div class="btn-group btn-group-justified" id="multipleChoice" role="group" aria-label="...">
           <div class="btn-group" role="group">
             <button type="button" class="btn btn-default choice" id="a0"></button>
@@ -44,7 +46,10 @@
 
 
       <div class="col-lg-2 col-md-2 col-sm-2 score timer">
-        <h2>Score</h2>
+        <h3>Timer</h3>
+        <div class="secs" id="secs">30</div>
+        <p class="secs">SECONDS</p>
+        <h3>Score</h3>
         <div class="score" id="userScore">0</div>
       </div>
 
@@ -56,8 +61,9 @@
               <h4 class="modal-title">Game Over</h4>
             </div>
             <div class="modal-body">
-              <p>Well done!</p>
+              <p>WELL DONE</p>
               <p id="finalScore"></p>
+              <p>Go you!!</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -67,6 +73,12 @@
         </div>
       </div>
 
+      <audio id="correctSound" preload="auto">
+      <source src="correct-sound-effect.wav"> </source>
+      </audio>
+      <audio id="incorrectSound" preload="auto">
+      <source src="incorrect-sound-effect.mp3"> </source>
+      </audio>
 
 
 
