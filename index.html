@@ -15,12 +15,31 @@
       <div class="panel panel-default">
         <div class="panel-body">
 
-      <div class="col-lg-2 col-md-2 col-sm-2 score categories">
-        <h3>Categories:</h3>
-        <p>General knowledge</p>
-        <p>Music</p>
-        <p>Sports</p>
-      </div>
+          <div class="modal fade myModal" id="startingModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Choose a category:</h4>
+                </div>
+                <div class="modal-body">
+                  <p id=>Geography</p>
+                  <p>Music</p>
+                  <p>Movies</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary playAgain" id="start" data-dismiss="modal">START</button>
+                  <!-- <button type="button" class="btn btn-primary playAgain" id="playAgain" onclick="location.href = 'home.html'">Play again</button> -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-2 col-sm-2 score timer">
+            <h3>Timer</h3>
+            <div class="secs" id="secs">15</div>
+            <p class="secs">SECONDS</p>
+          </div>
 
 
       <div class="col-lg-8 col-md-8 col-sm-8 question answer">
@@ -46,9 +65,6 @@
 
 
       <div class="col-lg-2 col-md-2 col-sm-2 score timer">
-        <h3>Timer</h3>
-        <div class="secs" id="secs">30</div>
-        <p class="secs">SECONDS</p>
         <h3>Score</h3>
         <div class="score" id="userScore">0</div>
       </div>
@@ -67,7 +83,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary playAgain" id="playAgain" onclick="location.href = 'home.html'">Play again</button>
+              <button type="button" class="btn btn-primary playAgain" id="playAgain" onclick="location.href = 'index.html'">Play again</button>
             </div>
           </div>
         </div>
