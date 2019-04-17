@@ -18,54 +18,29 @@ $(".difficulty").on("click", function(){
 var category = [];
 $(".category").on("click", function() {
   var options2 = (this.innerHTML)
-  if (category == "Video Games") {
-    options2.push("15");
-  } else if (category == "Music") {
-    options2.push("12");
-  } else if (category == "Movies") {
-    options2.push("11");
-  } else if (category == "General Knowledge") {
-    options2.push("9");
+  if (options2 == "Video Games") {
+    category.push(15);
+  } else if (options2 == "Music") {
+    category.push(12);
+  } else if (options2 == "Movies") {
+    category.push(11);
+  } else if (options2 == "General Knowledge") {
+    category.push(9);
   }
 })
 
 $("#start").on("click", function(){
-  getQuestions(category, difficulty)
+  getQuestions(difficulty, category)
 })
 
 
 
-
-// $(".difficulty").on("click", function() {
-//   var difficulty = (this.innerHTML)
-//   if (difficulty == "Easy") {
-//     getQuestions("easy");
-//   } else if (category == "Medium") {
-//     getQuestions("medium");
-//   } else if (category == "Hard") {
-//     getQuestions("hard");
-//   }
-// })
-//
-// $(".category").on("click", function() {
-//   var category = (this.innerHTML)
-//   if (category == "Video Games") {
-//     getQuestions("15");
-//   } else if (category == "Music") {
-//     getQuestions("12");
-//   } else if (category == "Movies") {
-//     getQuestions("11");
-//   } else if (category == "General Knowledge") {
-//     getQuestions("9");
-//   }
-// })
-
-
-  function getQuestions(category, difficulty) {
+  function getQuestions(difficulty, category) {
     var request = new XMLHttpRequest();
-    request.open("GET", "https://opentdb.com/api.php?amount=5&category="+ category +"&difficulty="+ difficulty + "&type=multiple");
+    request.open("GET", "https://opentdb.com/api.php?amount=20&category="+ category +"&difficulty="+ difficulty + "&type=multiple");
     request.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
+      console.log(data);
       fillInQAndA(data);
     });
     request.send();
@@ -110,7 +85,6 @@ $("#start").on("click", function(){
       if (this.innerHTML == correctAns[0]) {
         var audio = $("#correctSound")[0];
         audio.play();
-        // console.log("Correct answer!!");
         score++;
         document.getElementById("userScore").innerHTML ="Correct answers: " + score;
         answers = [];
@@ -118,7 +92,6 @@ $("#start").on("click", function(){
         questionNumber++;
         fillInQAndA(questions);
       } else {
-      // console.log("Wrong answer");
       var audio = $("#incorrectSound")[0];
       audio.play();
       answers = [];
