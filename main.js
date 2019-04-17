@@ -3,10 +3,67 @@ console.log("DOM is ready");
 
 $('#startingModal').modal('show');
 
+var difficulty = [];
+$(".difficulty").on("click", function(){
+  var options1 = (this.innerHTML);
+  if (options1 == "Easy") {
+    difficulty.push("easy");
+  } else if (options1 == "Medium") {
+    difficulty.push("medium");
+  } else if (options1 == "Hard") {
+    difficulty.push("hard");
+  }
+})
 
-  function getQuestions() {
+var category = [];
+$(".category").on("click", function() {
+  var options2 = (this.innerHTML)
+  if (category == "Video Games") {
+    options2.push("15");
+  } else if (category == "Music") {
+    options2.push("12");
+  } else if (category == "Movies") {
+    options2.push("11");
+  } else if (category == "General Knowledge") {
+    options2.push("9");
+  }
+})
+
+$("#start").on("click", function(){
+  getQuestions(category, difficulty)
+})
+
+
+
+
+// $(".difficulty").on("click", function() {
+//   var difficulty = (this.innerHTML)
+//   if (difficulty == "Easy") {
+//     getQuestions("easy");
+//   } else if (category == "Medium") {
+//     getQuestions("medium");
+//   } else if (category == "Hard") {
+//     getQuestions("hard");
+//   }
+// })
+//
+// $(".category").on("click", function() {
+//   var category = (this.innerHTML)
+//   if (category == "Video Games") {
+//     getQuestions("15");
+//   } else if (category == "Music") {
+//     getQuestions("12");
+//   } else if (category == "Movies") {
+//     getQuestions("11");
+//   } else if (category == "General Knowledge") {
+//     getQuestions("9");
+//   }
+// })
+
+
+  function getQuestions(category, difficulty) {
     var request = new XMLHttpRequest();
-    request.open("GET", "https://opentdb.com/api.php?amount=20&category=22&difficulty=medium&type=multiple");
+    request.open("GET", "https://opentdb.com/api.php?amount=5&category="+ category +"&difficulty="+ difficulty + "&type=multiple");
     request.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
       fillInQAndA(data);
