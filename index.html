@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="confetti-js-master/dist/index.min.js"></script>
     <link rel="stylesheet" href="main.css">
     <script type="text/javascript" src="main.js"></script>
   </head>
   <body>
+    <div id="myConfetti"></div>
     <div class="container allContent">
       <h1>Best Quiz Game Ever</h1>
       <div class="panel panel-default mainPanel">
@@ -21,27 +23,22 @@
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   <h3 class="modal-title">Instructions</h3>
-                  <p class="modal-title">You have 30 seconds to answer as many questions as you can...GOOD LUCK!</p>
+                  <p class="modal-title">You have 60 seconds to answer as many questions as you can...GOOD LUCK!</p>
                 </div>
                 <div class="modal-body">
                   <h4>Choose a difficulty level:</h4>
-                  <button type="button" class="btn btn-primary difficulty">Easy</button>
-                  <button type="button" class="btn btn-primary difficulty">Medium</button>
-                  <button type="button" class="btn btn-primary difficulty">Hard</button>
+                  <button type="button" class="btn btn-success difficulty">Easy</button>
+                  <button type="button" class="btn btn-warning difficulty">Medium</button>
+                  <button type="button" class="btn btn-danger difficulty">Hard</button>
                   <h4>Choose a category:</h4>
                   <button type="button" class="btn btn-primary category">Video Games</button>
                   <button type="button" class="btn btn-primary category">Music</button>
                   <button type="button" class="btn btn-primary category">Movies</button>
-                  <button type="button" class="btn btn-primary category">General Knowledge</button>
-                  <!-- <h4>Choose a category:</h4>
-                  <button type="button" class="btn btn-primary category" data-dismiss="modal">Video Games</button>
-                  <button type="button" class="btn btn-primary category" data-dismiss="modal">Music</button>
-                  <button type="button" class="btn btn-primary category" data-dismiss="modal">Movies</button>
-                  <button type="button" class="btn btn-primary category" data-dismiss="modal">General Knowledge</button> -->
+                  <button type="button" class="btn btn-primary category">Sports</button>
                 </div>
                 <div class="modal-footer">
                   <h4>GOOD LUCK!</h4>
-                  <button type="button" class="btn btn-success start" data-dismiss="modal" id="start">START</button>
+                  <button type="button" class="btn btn-default start" data-dismiss="modal" id="start">START</button>
                 </div>
               </div>
             </div>
@@ -49,14 +46,13 @@
 
           <div class="col-lg-2 col-md-2 col-sm-2 score timer">
             <h3>Timer</h3>
-            <div class="secs" id="secs">30</div>
+            <div class="secs" id="secs">10</div>
             <p class="secs">SECONDS</p>
           </div>
 
 
       <div class="col-lg-8 col-md-8 col-sm-8 question answer">
         <h3>Question:</h3>
-        <!-- <h2 class="q" id="q"></h2> -->
         <p class="q" id="q"></p>
         <h3 class="ansHeading">Pick your answer:</h3>
         <div class="btn-group btn-group-justified" id="multipleChoice" role="group" aria-label="...">
@@ -94,7 +90,6 @@
               <p>Go you!!</p>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary playAgain" id="playAgain" onclick="location.href = 'index.html'">Play again</button>
             </div>
           </div>
@@ -107,6 +102,8 @@
       <audio id="incorrectSound" preload="auto">
       <source src="incorrect-sound-effect.mp3"> </source>
       </audio>
+
+
 
 
 

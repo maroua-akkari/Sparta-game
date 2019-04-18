@@ -24,8 +24,8 @@ $(".category").on("click", function() {
     category.push(12);
   } else if (options2 == "Movies") {
     category.push(11);
-  } else if (options2 == "General Knowledge") {
-    category.push(9);
+  } else if (options2 == "Sports") {
+    category.push(21);
   }
 })
 
@@ -65,7 +65,7 @@ $("#start").on("click", function(){
   }
 
   function ansChoices(data) {
-    correctAns.push(data.results[questionNumber].correct_answer + " A");
+    correctAns.push(data.results[questionNumber].correct_answer);
     answers.push(data.results[questionNumber].incorrect_answers[0]);
     answers.push(data.results[questionNumber].incorrect_answers[1]);
     answers.push(data.results[questionNumber].incorrect_answers[2]);
@@ -112,6 +112,10 @@ $("#start").on("click", function(){
     }
     if (time <= 0) {
       $(".secs").html("Time's up!").css("color", "red");
+      $("#myConfetti").html("<canvas id='my-canvas'></canvas>")
+      var confettiSettings = { target: 'my-canvas' };
+      var confetti = new ConfettiGenerator(confettiSettings);
+      confetti.render();
       $('#myModal').modal('show');
       $("#finalScore").html("You answered " + score + " questions correctly");
     }
