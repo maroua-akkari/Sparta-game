@@ -2,25 +2,32 @@
   border: 1px solid black;
 } */
 
-h1, h2, h4 {
+h1, h2, h3, h4 {
   text-align: center;
+  font-family: "Marker Felt", fantasy;
 }
+
+
 
 h1 {
   padding-top: 5px;
+  font-family: "Marker Felt", fantasy;
+  font-weight: 900;
+  font-size: 100px;
+  text-shadow: 5px 5px #337ab7;
 }
 
 body {
   background: url("quiz-background.png");
 }
 
+
 .allContent {
-    border: 1px solid black;
+    border: 10px double black;
     margin-top: 100px;
 }
 
-.categories li {
-  list-style: none;
+.categories {
   text-align: center;
 }
 
@@ -28,7 +35,7 @@ body {
   text-align: center;
 }
 
-.secs , .mins {
+.secs {
   text-align: center;
 }
 
@@ -37,7 +44,7 @@ body {
 }
 
 .myModal {
-  margin-top: 200px;
+  margin-top: 220px;
 }
 
 .playAgain {
@@ -45,8 +52,30 @@ body {
   text-decoration: none;
 }
 
+.ansHeading {
+  padding-top: 20px;
+}
+
+.choice {
+  height: 50px;
+  white-space: normal;
+  text-overflow: clip;
+  overflow: visible;
+}
+
+.start {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
 .panel {
-margin: 40px;
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+/* margin: 40px; */
 padding: 50px;
 text-align: center;
 }
