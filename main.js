@@ -37,7 +37,7 @@ $("#start").on("click", function(){
 
   function getQuestions(difficulty, category) {
     var request = new XMLHttpRequest();
-    request.open("GET", "https://opentdb.com/api.php?amount=20&category="+ category +"&difficulty="+ difficulty + "&type=multiple");
+    request.open("GET", "https://opentdb.com/api.php?amount=60&category="+ category +"&difficulty="+ difficulty + "&type=multiple");
     request.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
       console.log(data);
@@ -118,6 +118,10 @@ $("#start").on("click", function(){
       confetti.render();
       $('#myModal').modal('show');
       $("#finalScore").html("You answered " + score + " questions correctly");
+    }
+    if (time == 5) {
+      var audio = $("#countdownSound")[0];
+      audio.play();
     }
     document.getElementById("secs").innerHTML = time;
   }, 1000);
