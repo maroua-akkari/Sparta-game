@@ -1,0 +1,87 @@
+/* .difficulty , .categories , .question , .answer , .timer , .score {
+  border: 1px solid black;
+} */
+
+h1, h2, h3, h4 {
+  text-align: center;
+  font-family: 'Sigmar One', cursive;
+}
+
+
+
+h1 {
+  padding-top: 5px;
+  font-family: 'Monoton', cursive;
+  font-size: 100px;
+  text-shadow: 1px 1px grey;
+}
+
+body {
+  background: url("quiz-background.png");
+}
+
+.instructionsP , .difficulty, .category, .choice {
+  font-size: 18px;
+}
+
+
+.allContent {
+    border: 5px double black;
+    margin-top: 100px;
+}
+
+.categories {
+  text-align: center;
+}
+
+.q {
+  text-align: center;
+  font-size: 25px;
+}
+
+.secs {
+  text-align: center;
+}
+
+.score {
+  text-align: center;
+}
+
+.myModal {
+  margin-top: 220px;
+}
+
+.qHeading {
+  padding-bottom: 15px;
+}
+
+.ansHeading {
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+
+.choice {
+  height: 60px;
+  white-space: normal;
+  text-overflow: clip;
+  overflow: visible;
+
+}
+
+.start , .playAgain {
+  background-color: black;
+  color: white;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.panel {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-top: 0;
+  padding: 50px;
+  padding-bottom: 78px;
+  text-align: center;
+}
