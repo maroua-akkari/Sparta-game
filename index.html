@@ -81,10 +81,9 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title">Game Over</h4>
+              <h2 class="modal-title">Game Over</h2>
             </div>
-            <div class="modal-body">
+            <div class="modal-body gameOver">
               <p>WELL DONE</p>
               <p id="finalScore"></p>
               <p>Go you!!</p>
@@ -98,13 +97,16 @@
       </div>
 
       <audio id="correctSound" preload="auto">
-      <source src="correct-sound-effect.wav"> </source>
+      <source src="audio/correct-sound-effect.wav"> </source>
       </audio>
       <audio id="incorrectSound" preload="auto">
-      <source src="incorrect-sound-effect.mp3"> </source>
+      <source src="audio/incorrect-sound-effect.mp3"> </source>
       </audio>
       <audio id="countdownSound" preload="auto">
-      <source src="countdown-sound.mp3"> </source>
+      <source src="audio/countdown-sound.mp3"> </source>
+      </audio>
+      <audio id="clappingSound" preload="auto">
+      <source src="audio/clapping-sound-effect.mp3"> </source>
       </audio>
 
         </div>
