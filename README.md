@@ -4,5 +4,6 @@ This is a multiple choice quiz game generated using the [Open Trivia Database AP
 
 To run this quiz you will need to add the Bootstrap CSS and JavaScript links in the HTML head (see index.html).
 
-Clicking on the image below will open the quiz in a new tab. Follow the instructions and have fun!
-![https://maroua-akkari.github.io/Sparta-game/](images/game-screenshot.png)
+Clicking [here](https://maroua-akkari.github.io/Sparta-game/) will open the quiz in a new tab. Follow the instructions and have fun!
+
+(images/game-screenshot.png)
