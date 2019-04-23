@@ -26,22 +26,16 @@ body {
     margin-top: 100px;
 }
 
-.categories {
-  text-align: center;
-}
 
 .q {
   text-align: center;
   font-size: 25px;
 }
 
-.secs {
+.secs, .score, .categories {
   text-align: center;
 }
 
-.score {
-  text-align: center;
-}
 
 .myModal {
   margin-top: 200px;
