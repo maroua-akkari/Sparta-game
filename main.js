@@ -1,5 +1,4 @@
 $(function(event) {
-console.log("DOM is ready");
 
 $('#startingModal').modal('show');
 
@@ -40,7 +39,6 @@ $("#start").on("click", function(){
     request.open("GET", "https://opentdb.com/api.php?amount=45&category="+category+"&difficulty="+difficulty+"&type=multiple");
     request.addEventListener("load", function() {
       var data = JSON.parse(this.responseText);
-      console.log(data);
       fillInQAndA(data);
     });
     request.send();
