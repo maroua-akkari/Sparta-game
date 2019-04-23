@@ -6,4 +6,4 @@ To run this quiz you will need to add the Bootstrap CSS and JavaScript links in 
 
 Clicking [here](https://maroua-akkari.github.io/Sparta-game/) will open the quiz in a new tab. Follow the instructions and have fun!
 
-(images/game-screenshot.png)
+![](images/game-screenshot.png)
